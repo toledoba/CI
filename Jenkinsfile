@@ -3,12 +3,13 @@ pipeline {
     agent any
     
     stages {
-        stage('stage one') {
+        stage('widoco') {
             steps {
                 script {
                     tags_extra = "value_1"
                 }
                 echo "tags_extra: ${tags_extra}"
+				sh "./widoco.sh"
             }
         }
         stage('stage two') {
