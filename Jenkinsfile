@@ -71,16 +71,17 @@ pipeline {
     // ------------------------------------
     stage('Widoco'){
       steps{
-        git url: 'https://github.com/dgarijo/Widoco'
-        sh('mvn install -DskipTests')
-        script{
-          def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
-          if (matcher) {
-            VERSION = "${matcher[0][1]}"
-            echo "Building Widoco version ${VERSION}"
-          }
-        }
-        sh("mv jar/widoco-${VERSION}-jar-with-dependencies.jar .")
+        sh 'pwd'
+        //git url: 'https://github.com/dgarijo/Widoco'
+        //sh('mvn install -DskipTests')
+        //script{
+        //  def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+        //  if (matcher) {
+        //    VERSION = "${matcher[0][1]}"
+        //    echo "Building Widoco version ${VERSION}"
+        //  }
+        //}
+        //sh("mv jar/widoco-${VERSION}-jar-with-dependencies.jar .")
         //sh ("java -jar widoco-1.4.13-jar-with-dependencies.jar -ontFile alo.owl -outFolder doc -confFile ./config/ontosoft.properties -rewriteAll -lang en;es") 
         
       }
@@ -105,8 +106,8 @@ pipeline {
     stage('AR2Tool') {
       steps {
         sh 'pwd'
-        git url: 'https://github.com/idafensp/AR2DTool/'
-        sh("mv lib/ar2dtool-0.1.jar .")
+        //git url: 'https://github.com/idafensp/AR2DTool/'
+        //sh("mv lib/ar2dtool-0.1.jar .")
         //sh('java -jar ar2dtool.jar -i PathToInputRdfFile -o FileToOutputFile -t OutputFileType -c PathToConfFile -GENERATE_FLAGS [-d]')
         //sh('mvn install')
 
