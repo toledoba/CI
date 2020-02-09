@@ -106,6 +106,7 @@ pipeline {
       steps {
         sh 'pwd'
         git url: 'https://github.com/idafensp/AR2DTool/'
+        sh("mv lib/ar2dtool-0.1.jar .")
         //sh('java -jar ar2dtool.jar -i PathToInputRdfFile -o FileToOutputFile -t OutputFileType -c PathToConfFile -GENERATE_FLAGS [-d]')
         //sh('mvn install')
 
