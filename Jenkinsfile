@@ -40,7 +40,8 @@ pipeline {
       steps {
         
         script {
-
+          def myont = "Ontology/*.owl"
+          echo " aquiiiiiii ${myont}"
           if (isUnix()) {
             //TODO
             //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
