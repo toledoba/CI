@@ -25,7 +25,7 @@ pipeline {
       //DB_ENGINE    = 'sqlite'
       VERSION      = 'undefined'
       WIDOCO       = '1.4.13'
-      AR2TOOL      = 'v.1.0'
+      AR2TOOL      = '${AR2TOOL}'
 
   }
 
@@ -120,14 +120,15 @@ pipeline {
         script{
           def exists = fileExists "ar2dtool-0.1.jar"
           if(!exists){
-            sh 'wget https://github.com/idafensp/ar2dtool/archive/v.1.0.tar.gz'
-            sh 'tar -xf v.1.0.tar.gz'
-            sh 'rm v.1.0.tar.gz'
-            sh 'mv ar2dtool-v.1.0/lib/ar2dtool-0.1.jar .'
-            sh 'rm -rf ar2dtool-v.1.0'
+            sh "wget https://github.com/idafensp/ar2dtool/archive/${AR2TOOL}.tar.gz"
+            sh "tar -xf ${AR2TOOL}.tar.gz"
+            sh "rm ${AR2TOOL}.tar.gz"
+            sh "mv ar2dtool-${AR2TOOL}/lib/ar2dtool-0.1.jar . "
+            sh "rm -rf ar2dtool-${AR2TOOL}"
           }else{
              echo "Building AR2Tool version ${AR2TOOL}"
           }
+
         }
       }
     }
