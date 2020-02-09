@@ -42,7 +42,7 @@ pipeline {
             //TODO
             //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
             echo "Unix"
-            
+            echo "${env.WORKSPACE}"
           } else {
             //TODO
             //bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
