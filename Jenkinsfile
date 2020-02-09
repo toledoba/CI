@@ -124,6 +124,7 @@ pipeline {
             sh 'tar -xf v.1.0.tar.gz'
             sh 'rm v.1.0.tar.gz'
             sh 'mv ar2dtool-v.1.0/lib/ar2dtool-0.1.jar .'
+            sh 'rm -rf ar2dtool-v.1.0'
           }else{
              echo "Building AR2Tool version ${AR2TOOL}"
           }
