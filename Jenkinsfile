@@ -40,8 +40,8 @@ pipeline {
       steps {
         
         script {
-          def filename =~ '/-([A-Z]+)\.owl/'
-          echo " aquiiiiiii ${filename}"
+          files = findFiles(glob: '**/.owl')
+          echo " aquiiiiiii ${files[0].name}"
           if (isUnix()) {
             //TODO
             //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
