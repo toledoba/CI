@@ -82,8 +82,8 @@ pipeline {
             echo "Building Widoco version ${WIDOCO}"
           }
           //java -jar widoco-VERSION-jar-with-dependencies.jar [-ontFile file] or [-ontURI uri] [-outFolder folderName] [-confFile propertiesFile] or [-getOntologyMetadata] [-oops] [-rewriteAll] [-crossRef] [-saveConfig configOutFile] [-useCustomStyle] [-lang lang1-lang2] [-includeImportedOntologies] [-htaccess] [-webVowl] [-licensius] [-ignoreIndividuals] [-analytics analyticsCode] [-doNotDisplaySerializations][-displayDirectImportsOnly] [-rewriteBase rewriteBasePath] [-excludeIntroduction] [-uniteSections]
-          sh "java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile Ontology/alo.owl -outFolder doc  -oops -rewriteAll -lang en;es"
         }
+        sh "java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile Ontology/alo.owl -outFolder doc  -oops -rewriteAll -lang en;es"
         
         //git url: 'https://github.com/dgarijo/Widoco'
         //sh('mvn install -DskipTests')
