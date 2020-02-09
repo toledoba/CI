@@ -72,6 +72,7 @@ pipeline {
     stage('Widoco'){
       steps{
         sh 'pwd'
+        sh 'wget https://github.com/dgarijo/Widoco/releases/download/v1.4.13/widoco-1.4.13-jar-with-dependencies.jar'
         //git url: 'https://github.com/dgarijo/Widoco'
         //sh('mvn install -DskipTests')
         //script{
