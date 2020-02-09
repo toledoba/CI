@@ -61,7 +61,7 @@ pipeline {
         }
         // -- Clean Workspace
         echo "Clean Workspace"
-        cleanWs()
+        //cleanWs()
         
       }
     }
