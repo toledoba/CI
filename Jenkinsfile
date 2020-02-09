@@ -40,7 +40,7 @@ pipeline {
       steps {
         
         script {
-          files = findFiles(glob: '**/.owl')
+          def files = findFiles(glob: '**/*.owl') echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
           echo " aquiiiiiii ${files[0].name}"
           if (isUnix()) {
             //TODO
