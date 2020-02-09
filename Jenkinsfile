@@ -24,6 +24,9 @@ pipeline {
       //DISABLE_AUTH = 'true'
       //DB_ENGINE    = 'sqlite'
       VERSION      = 'undefined'
+      WIDOCO       = 'widoco-1.4.13'
+      AR2TOOL      = 'ar2dtool-0.1'
+
   }
 
   stages {
@@ -54,7 +57,7 @@ pipeline {
 
           } 
             // -- Set the Directory of the files in the workspace
-            JOB_FILES_DIRECTORY = "${env.JOB_DIRECTORY}"
+            JOB_FILES_DIRECTORY = "${env}"
             echo "directorio $JOB_FILES_DIRECTORY"
             // -- Set the suite name and route parameter
             //SUITE_PATH = "src/test/resources/suites/"+"${JOB_APPIUM_SUITE}"+".xml" 
@@ -71,6 +74,7 @@ pipeline {
     // ------------------------------------
     stage('Widoco'){
       steps{
+        
         sh 'pwd'
         sh 'wget https://github.com/dgarijo/Widoco/releases/download/v1.4.13/widoco-1.4.13-jar-with-dependencies.jar'
         //git url: 'https://github.com/dgarijo/Widoco'
