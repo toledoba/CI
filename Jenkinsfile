@@ -40,8 +40,7 @@ pipeline {
       steps {
         
         script {
-          def files = findFiles(glob: '**/*.owl') echo """${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"""
-          echo " aquiiiiiii ${files[0].name}"
+          //def files = findFiles(glob: '**/*.owl') echo "${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"
           if (isUnix()) {
             //TODO
             //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
