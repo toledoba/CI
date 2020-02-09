@@ -79,10 +79,10 @@ pipeline {
           if (!exists) {
             sh "wget https://github.com/dgarijo/Widoco/releases/download/v${WIDOCO}/widoco-${WIDOCO}-jar-with-dependencies.jar"
           } else {
-            echo "Building Widoco version ${VERSION}"
+            echo "Building Widoco version ${WIDOCO}"
           }
           //java -jar widoco-VERSION-jar-with-dependencies.jar [-ontFile file] or [-ontURI uri] [-outFolder folderName] [-confFile propertiesFile] or [-getOntologyMetadata] [-oops] [-rewriteAll] [-crossRef] [-saveConfig configOutFile] [-useCustomStyle] [-lang lang1-lang2] [-includeImportedOntologies] [-htaccess] [-webVowl] [-licensius] [-ignoreIndividuals] [-analytics analyticsCode] [-doNotDisplaySerializations][-displayDirectImportsOnly] [-rewriteBase rewriteBasePath] [-excludeIntroduction] [-uniteSections]
-          sh ("java -jar widoco-${VERSION}-jar-with-dependencies.jar -ontFile Ontology/alo.owl -outFolder doc -confFile ./config/ontosoft.properties -rewriteAll -lang en;es")
+          sh ("java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile Ontology/alo.owl -outFolder doc -confFile ./config/ontosoft.properties -rewriteAll -lang en;es")
         }
         
         //git url: 'https://github.com/dgarijo/Widoco'
