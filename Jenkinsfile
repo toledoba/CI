@@ -24,7 +24,7 @@ pipeline {
       //DISABLE_AUTH = 'true'
       //DB_ENGINE    = 'sqlite'
       VERSION      = 'undefined'
-      WIDOCO       = 'widoco-1.4.13'
+      WIDOCO       = '1.4.13'
       AR2TOOL      = 'ar2dtool-0.1'
 
   }
@@ -74,9 +74,16 @@ pipeline {
     // ------------------------------------
     stage('Widoco'){
       steps{
+        script{
+          def exists = fileExists "widoco-${WIDOCO}-jar-with-dependencies.jar"
+          if (!exists) {
+            sh "wget https://github.com/dgarijo/Widoco/releases/download/v${WIDOCO}/widoco-${WIDOCO}-jar-with-dependencies.jar"
+          } else {
+            echo "Building Widoco version ${VERSION}"
+          }
+
+        }
         
-        sh 'pwd'
-        sh 'wget https://github.com/dgarijo/Widoco/releases/download/v1.4.13/widoco-1.4.13-jar-with-dependencies.jar'
         //git url: 'https://github.com/dgarijo/Widoco'
         //sh('mvn install -DskipTests')
         //script{
@@ -111,9 +118,9 @@ pipeline {
     stage('AR2Tool') {
       steps {
         sh 'pwd'
-        sh 'wget https://github.com/idafensp/ar2dtool/archive/v.1.0.tar.gz'
-        sh 'tar -xf v.1.0.tar.gz'
-        sh 'mv ar2dtool-v.1.0/lib/ar2dtool-0.1.jar .'
+        //sh 'wget https://github.com/idafensp/ar2dtool/archive/v.1.0.tar.gz'
+        //sh 'tar -xf v.1.0.tar.gz'
+        //sh 'mv ar2dtool-v.1.0/lib/ar2dtool-0.1.jar .'
         //git url: 'https://github.com/idafensp/AR2DTool/'
         //sh("mv lib/ar2dtool-0.1.jar .")
         //sh('java -jar ar2dtool.jar -i PathToInputRdfFile -o FileToOutputFile -t OutputFileType -c PathToConfFile -GENERATE_FLAGS [-d]')
