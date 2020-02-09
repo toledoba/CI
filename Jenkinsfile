@@ -40,8 +40,8 @@ pipeline {
       steps {
         
         script {
-          var = filename =~ /-([A-Z]+)\.owl/
-          echo " aquiiiiiii ${var}"
+          def filename =~ '/-([A-Z]+)\.owl/'
+          echo " aquiiiiiii ${filename}"
           if (isUnix()) {
             //TODO
             //sh "'${mvnHome}/bin/mvn' -Dintegration-tests.skip=true -Dbuild.number=${targetVersion} clean package"
