@@ -25,7 +25,7 @@ pipeline {
       //DB_ENGINE    = 'sqlite'
       VERSION      = 'undefined'
       WIDOCO       = '1.4.13'
-      AR2TOOL      = '${AR2TOOL}'
+      AR2TOOL      = 'v.1.0'
 
   }
 
