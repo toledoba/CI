@@ -119,7 +119,7 @@ pipeline {
     stage('VocabLite') {
       steps {
         sh 'pwd'
-        sh("rm -rf -- !(*.jar)")
+        sh("mv -f -- !(*.jar)")
       }
     }
   }
