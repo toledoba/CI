@@ -122,6 +122,7 @@ pipeline {
           if(!exists){
             sh 'wget https://github.com/idafensp/ar2dtool/archive/v.1.0.tar.gz'
             sh 'tar -xf v.1.0.tar.gz'
+            sh 'rm v.1.0.tar.gz'
             sh 'mv ar2dtool-v.1.0/lib/ar2dtool-0.1.jar .'
           }else{
              echo "Building AR2Tool version ${AR2TOOL}"
