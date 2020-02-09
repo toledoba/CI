@@ -60,7 +60,7 @@ pipeline {
             //SUITE_PATH = "src/test/resources/suites/"+"${JOB_APPIUM_SUITE}"+".xml" 
         }
         // -- Clean Workspace
-        echo "Clean Workspace"
+        //echo "Clean Workspace"
         cleanWs()
         
       }
