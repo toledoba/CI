@@ -118,7 +118,7 @@ pipeline {
     stage('AR2Tool') {
       steps {
         script{
-          def exists = fileExists "ar2dtool-v.1.0/lib/ar2dtool-0.1.jar"
+          def exists = fileExists "ar2dtool-0.1.jar"
           if(!exists){
             sh 'wget https://github.com/idafensp/ar2dtool/archive/v.1.0.tar.gz'
             sh 'tar -xf v.1.0.tar.gz'
