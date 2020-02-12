@@ -1,7 +1,7 @@
 /*******************************************************\
     Universidad Politecnica de Madrid, Spain
     Copyright 2020 Ontology Engineering Group
-    @autor: 
+    @autor: Jhon Toledo Barreto
 \*******************************************************/
 
 // -- Directory where the Project Files are located.  
