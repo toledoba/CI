@@ -146,7 +146,7 @@ pipeline {
           }else{
              echo "Building VocabLite version ${VOCABLITE}"
           }
-          sh "java-jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i Ontology -o vocabLite"
+          sh "java -jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i Ontology -o vocabLite"
         }
       }
     }
