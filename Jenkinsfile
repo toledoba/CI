@@ -26,6 +26,7 @@ pipeline {
       VERSION      = 'undefined'
       WIDOCO       = '1.4.13'
       AR2TOOL      = 'v.1.0'
+      VOCABLITE    = '1.0.2'
 
   }
 
@@ -129,7 +130,6 @@ pipeline {
           }else{
              echo "Building AR2Tool version ${AR2TOOL}"
           }
-
         }
       }
     }
@@ -139,7 +139,15 @@ pipeline {
     // ------------------------------------
     stage('VocabLite') {
       steps {
-        sh 'pwd'
+        script{
+          def exists = fileExists "vocabLite-${VOCABLITE}-jar-with-dependencies.jar"
+          if(!exists){
+            sh "wget https://github.com/dgarijo/vocabLite/releases/download/${VOCABLITE}/vocabLite-${VOCABLITE}-jar-with-dependencies.jar"
+          }else{
+             echo "Building VocabLite version ${VOCABLITE}"
+          }
+          sh "java-jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i Ontology -o vocabLite"
+        }
       }
     }
   }
