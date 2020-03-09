@@ -30,7 +30,7 @@ pipeline {
       WIDOCO       = '1.4.13'
       AR2TOOL      = 'v.1.0'
       VOCABLITE    = '1.0.2'
-      Ontology     ='Ontology'
+      Ontology     ='Ontology' // -- name of the directory where the ontology is located
 
   }
 
