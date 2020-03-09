@@ -76,7 +76,7 @@ pipeline {
     stage('Widoco'){
       steps{
         script{
-          onto="Ontology/*.owl"
+          onto='Ontology/*.owl'
           echo "++++$onto"
           def exists = fileExists "widoco-${WIDOCO}-jar-with-dependencies.jar"
           
