@@ -76,7 +76,10 @@ pipeline {
     stage('Widoco'){
       steps{
         script{
+          onto="Ontology/*.owl"
+          echo "++++$onto"
           def exists = fileExists "widoco-${WIDOCO}-jar-with-dependencies.jar"
+          
           if (!exists) {
             sh "wget https://github.com/dgarijo/Widoco/releases/download/v${WIDOCO}/widoco-${WIDOCO}-jar-with-dependencies.jar"
           } else {
