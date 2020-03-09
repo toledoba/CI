@@ -10,7 +10,7 @@ def JOB_FILES_DIRECTORY
 def PLATFORM_TOOL_DIRECTORY
 // -- Path of the Suite to execute
 def SUITE_PATH
-
+import static groovy.io.FileType.*
 
 pipeline {
 
