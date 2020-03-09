@@ -12,8 +12,8 @@ def PLATFORM_TOOL_DIRECTORY
 def SUITE_PATH
 // -- Path of Ontology file
 def ONTOLOGY
-// --
-def Ontology="Ontology"
+// --  Ontology Directory
+def Ontology
 
 pipeline {
 
@@ -30,6 +30,7 @@ pipeline {
       WIDOCO       = '1.4.13'
       AR2TOOL      = 'v.1.0'
       VOCABLITE    = '1.0.2'
+      Ontology     ='Ontology'
 
   }
 
