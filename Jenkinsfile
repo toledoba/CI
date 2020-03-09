@@ -12,6 +12,8 @@ def PLATFORM_TOOL_DIRECTORY
 def SUITE_PATH
 // -- Path of Ontology file
 def ONTOLOGY
+// --
+def Ontology=Ontology
 
 pipeline {
 
@@ -77,7 +79,7 @@ pipeline {
       steps{
         script{
          // new File("Ontology/").eachFileMatch(FileType.FILES, ~/^.*-.*?.owl$/, { println it.name })
-          ONTOLOGY = sh(script: 'ls -1 Ontology/*.owl', returnStdout: true).split()
+            ONTOLOGY = sh(script: 'ls -1 ${Ontology}/*.owl', returnStdout: true).split()
           def exists = fileExists "widoco-${WIDOCO}-jar-with-dependencies.jar"
           
           if (!exists) {
@@ -150,7 +152,7 @@ pipeline {
           }else{
              echo "Building VocabLite version ${VOCABLITE}"
           }
-          sh "java -jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i Ontology -o vocabLite"
+            sh "java -jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i ${Ontology} -o vocabLite"
         }
       }
     }
