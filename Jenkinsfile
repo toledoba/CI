@@ -10,7 +10,7 @@ def JOB_FILES_DIRECTORY
 def PLATFORM_TOOL_DIRECTORY
 // -- Path of the Suite to execute
 def SUITE_PATH
-
+def onto
 
 pipeline {
 
@@ -39,7 +39,6 @@ pipeline {
     // ------------------------------------
     stage("Initial Configuration") {
       steps {
-        
         script {
           //def files = findFiles(glob: '**/*.owl') echo "${files[0].name} ${files[0].path} ${files[0].directory} ${files[0].length} ${files[0].lastModified}"
           if (isUnix()) {
@@ -75,7 +74,6 @@ pipeline {
     // ------------------------------------
     stage('Widoco'){
       steps{
-          def onto = null
         script{
          // new File("Ontology/").eachFileMatch(FileType.FILES, ~/^.*-.*?.owl$/, { println it.name })
             onto = sh(script: 'ls -1 Ontology/*', returnStdout: true).split()
