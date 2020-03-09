@@ -13,7 +13,7 @@ def SUITE_PATH
 // -- Path of Ontology file
 def ONTOLOGY
 // --
-def Ontology=Ontology
+def Ontology="Ontology"
 
 pipeline {
 
