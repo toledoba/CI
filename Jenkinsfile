@@ -10,7 +10,7 @@ def JOB_FILES_DIRECTORY
 def PLATFORM_TOOL_DIRECTORY
 // -- Path of the Suite to execute
 def SUITE_PATH
-import static groovy.io.FileType.*
+
 
 pipeline {
 
@@ -76,7 +76,7 @@ pipeline {
     stage('Widoco'){
       steps{
         script{
-          new File("Ontology/").eachFileMatch(FileType.FILES, ~/^.*-.*?.owl$/, { println it.name })
+         // new File("Ontology/").eachFileMatch(FileType.FILES, ~/^.*-.*?.owl$/, { println it.name })
           def exists = fileExists "widoco-${WIDOCO}-jar-with-dependencies.jar"
           
           if (!exists) {
