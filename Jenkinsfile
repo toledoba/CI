@@ -77,7 +77,7 @@ pipeline {
       steps{
         script{
          // new File("Ontology/").eachFileMatch(FileType.FILES, ~/^.*-.*?.owl$/, { println it.name })
-          def onto = findFiles(glob: '**/*.owl')
+          def onto = sh(script: 'ls -1 Ontology/*', returnStdout: true).split()
           echo "$onto"
           def exists = fileExists "widoco-${WIDOCO}-jar-with-dependencies.jar"
           
