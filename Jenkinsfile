@@ -159,6 +159,14 @@ pipeline {
         }
       }
     }
+      stage('publish'){
+		steps{
+			git status
+			git add Documents
+			git commit -m "Added file with automated Jenikins job"
+			git push
+		}
+	}
   }
 }
 
