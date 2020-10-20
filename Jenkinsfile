@@ -27,7 +27,7 @@ pipeline {
       //DISABLE_AUTH = 'true'
       //DB_ENGINE    = 'sqlite'
       VERSION      = 'undefined'
-      WIDOCO       = '1.4.13'
+      WIDOCO       = '1.4.14'
       AR2TOOL      = 'v.1.0'
       VOCABLITE    = '1.0.2'
       Ontology     ='Ontology' // -- name of the directory where the ontology is located
