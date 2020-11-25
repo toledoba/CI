@@ -25,8 +25,6 @@ pipeline {
   options{timestamps()}
   // -- Evironment
   environment {
-      //DISABLE_AUTH = 'true'
-      //DB_ENGINE    = 'sqlite'
       VERSION      = '1.0'
       WIDOCO       = '1.4.14'
       AR2TOOL      = 'v.1.0'
