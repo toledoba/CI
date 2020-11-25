@@ -31,7 +31,8 @@ pipeline {
       WIDOCO       = '1.4.14'
       AR2TOOL      = 'v.1.0'
       VOCABLITE    = '1.0.2'
-      Ontology_path     = 'Ontology/alo.owl' // -- name of the directory where the ontology is located
+      Ontology_dir  = 'Ontology'  // -- name of the directory where the ontology is located
+      Ontology_path     = 'Ontology/alo.owl' // -- path where the ontology is located
 
   }
 
@@ -93,8 +94,7 @@ pipeline {
           //java -jar widoco-VERSION-jar-with-dependencies.jar [-ontFile file] or [-ontURI uri] [-outFolder folderName] [-confFile propertiesFile] or [-getOntologyMetadata] [-oops] [-rewriteAll] [-crossRef] [-saveConfig configOutFile] [-useCustomStyle] [-lang lang1-lang2] [-includeImportedOntologies] [-htaccess] [-webVowl] [-licensius] [-ignoreIndividuals] [-analytics analyticsCode] [-doNotDisplaySerializations][-displayDirectImportsOnly] [-rewriteBase rewriteBasePath] [-excludeIntroduction] [-uniteSections]
         }
         //sh "java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile ${ONTOLOGY[0]} -outFolder Documents  -oops -rewriteAll -lang en-es -webVowl -uniteSections"
-          echo "++++++++++++++ ${Ontology_path} "
-         sh "java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile Ontology/alo.owl -outFolder Documents  -oops -rewriteAll -lang en-es -webVowl -uniteSections"
+         sh "java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile ${Ontology_path} -outFolder Documents  -oops -rewriteAll -lang en-es -webVowl -uniteSections"
           //sh "java -jar widoco-${WIDOCO}-jar-with-dependencies.jar -ontFile ${} -outFolder doc  -oops -rewriteAll -lang en-es -webVowl -uniteSections"
         
         //git url: 'https://github.com/dgarijo/Widoco'
@@ -157,7 +157,7 @@ pipeline {
           }else{
              echo "Building VocabLite version ${VOCABLITE}"
           }
-            sh "java -jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i ${Ontology} -o vocabLite"
+            sh "java -jar vocabLite-${VOCABLITE}-jar-with-dependencies.jar -i ${Ontology_dir} -o vocabLite"
         }
       }
     }
