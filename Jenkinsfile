@@ -30,7 +30,7 @@ pipeline {
       AR2TOOL      = 'v.1.0'
       VOCABLITE    = '1.0.2'
       Ontology_dir  = 'Ontology'  // -- name of the directory where the ontology is located
-      Ontology_path     = 'Ontology/alo.owl' // -- path where the ontology is located
+      Ontology_path     = 'Ontology/tm-facilities.owl' // -- path where the ontology is located
 
   }
 
